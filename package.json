@@ -38,6 +38,8 @@
   },
   "dependencies": {
     "draft-js": "^0.1.0",
-    "react-autocomplete": "^0.2.0"
+    "react-autocomplete": "^0.2.0",
+    "react-token-autocomplete": "^0.5.3",
+    "react-typeahead": "^1.1.5"
   }
 }

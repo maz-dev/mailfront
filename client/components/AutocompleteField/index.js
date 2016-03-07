@@ -1,29 +1,18 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Autocomplete from 'react-autocomplete';
-
+import {Typeahead, Tokenizer} from 'react-typeahead';
 import style from './style.css';
-
-function matchStateToTerm (email, value) {
-  return (
-    email.value.toLowerCase().indexOf(value.toLowerCase()) !== -1 ||
-    email.label.toLowerCase().indexOf(value.toLowerCase()) !== -1
-  );
-}
-
-function sortStates (a, b, value) {
-  return (
-    a.value.toLowerCase().indexOf(value.toLowerCase()) >
-    b.value.toLowerCase().indexOf(value.toLowerCase()) ? 1 : -1
-  );
-}
 
 function getEmails() {
   return [
-      {label: 'Andy', value: 'andy@protonmail.com'},
-      {label: 'Jason', value: 'jason@protonmail.com'},
-      {label: 'Richard', value: 'richard@protonmail.com'}
+      'andy@protonmail.com',
+      'jason@protonmail.com',
+      'richard@protonmail.com',
+      'nick@protonmail.com',
+      'nicole@protonmail.com',
+      'charlie@protonmail.com',
+      'tango@protonmail.com',
   ];
 }
 
@@ -46,32 +35,38 @@ let styles = {
 };
 export default class AutocompleteField extends Component {
   constructor() {
+    super()
+    this.state = { badges: [] };
   }
+
   select(value) {
+    // TODO: This part should be handled by flux actions.
     console.log(this.state);
-    var oldState = this.state.badges;
-    var nextState = oldState.push(value);
-    this.setState({badges: nextstate});
-    console.log(this.state.badges);
+    var oldBadges = this.state.badges;
+    var nextBadges = oldBadges.push(value);
+    this.setState({badges: nextBadges});
   }
+
   render() {
+    // this.state.badges.map(function(badge, index) {
+    //   console.log("badge!!!!" + badge);
+    //   console.log("index!!!!" + index);
+    // });
     return (
       <div className={style.autocomplete}>
         <span>to:</span>
-          <Autocomplete
-          initialValue=""
-          items={getEmails()}
-          getItemValue={(item) => item.value}
-          shouldItemRender={matchStateToTerm}
-          sortItems={sortStates}
-          onSelect={this.select}
-          renderItem={(item, isHighlighted) => (
-            <div
-              style={isHighlighted ? styles.highlightedItem : styles.item}
-              key={item.label}
-            >{item.value}</div>
-          )}
-        />
+          <Tokenizer
+            className={style.typeahead}
+            options={getEmails()}
+            onTokenAdd={function(token) {
+              console.log('token added: ', token);
+            }}
+            textarea={true}
+            displayOption={function(option, index) {
+              return option;
+            }}
+          />
+
       </div>
     );
   }
