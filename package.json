@@ -37,6 +37,7 @@
     "redux-actions": "^0.9.1"
   },
   "dependencies": {
-    "draft-js": "^0.1.0"
+    "draft-js": "^0.1.0",
+    "react-autocomplete": "^0.2.0"
   }
 }
