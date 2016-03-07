@@ -31,7 +31,7 @@ class App extends Component {
     const { todos, actions, children } = this.props;
     var content = "<h1>ProtonMail</h1>";
     return (
-      <div className={style.normal}>
+      <div className="main">
         <EditorBox content={rawContent}/>
         {children}
       </div>

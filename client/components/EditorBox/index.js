@@ -7,7 +7,7 @@ import style from './style.css';
 export default class EditorBox extends Component {
   render() {
     return(
-      <div className={style.editorbox}>
+      <div className="editorbox">
         <AutocompleteField />
         <Editor content={this.props.content}/>
       </div>

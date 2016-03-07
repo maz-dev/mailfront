@@ -24,6 +24,12 @@ export default class ProtonEditor extends Component {
   }
   render() {
     const {editorState} = this.state;
-    return <Editor editorState={editorState} onChange={this.onChange} />;
+    return (
+      <div>
+        <hr/>
+        <Editor editorState={editorState} onChange={this.onChange} />
+      </div>
+
+    );
   }
 }

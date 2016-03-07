@@ -6,6 +6,23 @@ body {
   height: 100%;
 }
 
+.main {
+
+}
+
+.editorbox{
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+  height: 480px;
+  background: #fff;
+  padding-top: 25px;
+  border: 2px solid rgb(212, 212, 212);
+  -webkit-box-shadow: inset 0px 25px 0px 0px rgba(91, 77, 91, 1);
+  -moz-box-shadow: inset 0px 25px 0px 0px  rgba(91, 77, 91, 1);
+  box-shadow: inset 0px 25px 0px 0px rgba(91, 77, 91, 1);
+}
+
 .hover {
   border-style: dotted;
   border-width: 1px;
@@ -27,6 +44,8 @@ body {
   border-radius: 5px;
 }
 .typeahead {
+  margin-top: 15px;
+  margin-bottom: 15px;
   max-width: 100%;
   display: inline-block;
 }
@@ -35,6 +54,14 @@ body {
   margin-left: 8px;
 }
 
-.autocomplete .span {
+input {
+  border: none;
+}
+
+.span-autocomplete {
+  margin-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 10px;
   float: left;
 }

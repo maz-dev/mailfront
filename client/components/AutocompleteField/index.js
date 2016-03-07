@@ -18,7 +18,7 @@ var emailsList = [
 function extractMail(mail) {
   var EmailRegex = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/gi;
   //"""
-  return EmailRegex.exec(mail);
+  return EmailRegex.exec(mail)[0];
 }
 export default class AutocompleteField extends Component {
   constructor() {
@@ -27,11 +27,10 @@ export default class AutocompleteField extends Component {
   }
 
   // TODO: This part should be handled by flux actions.
-  //regex email: .constant("regexEmail", /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/gi)
   render() {
     return (
       <div className={style.autocomplete}>
-        <span>to:</span>
+        <span className="span-autocomplete">to </span>
           <Tokenizer
             className={style.typeahead}
             options={emailsList}
