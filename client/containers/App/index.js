@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div className="main">
         <div className="bottom-windows">
-          <EditorBox content={rawContent}/>
+          
           <EditorBox content={rawContent}/>
           <EditorBox content={rawContent}/>
         </div>
