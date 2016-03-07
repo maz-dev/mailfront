@@ -29,10 +29,13 @@ const rawContent = {
 class App extends Component {
   render() {
     const { todos, actions, children } = this.props;
-    var content = "<h1>ProtonMail</h1>";
     return (
       <div className="main">
-        <EditorBox content={rawContent}/>
+        <div className="bottom-windows">
+          <EditorBox content={rawContent}/>
+          <EditorBox content={rawContent}/>
+          <EditorBox content={rawContent}/>
+        </div>
         {children}
       </div>
     );
