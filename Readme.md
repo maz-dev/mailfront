@@ -43,3 +43,12 @@ This is just my personal boilerplate, it may or may not be a good fit for your p
 # License
 
 MIT
+
+
+TODO:
+Cadre CSS,
+
+
+                              /--autocomplete
+store - reducers  --> App --->                  || Actions ---->
+                              \-- Editor
