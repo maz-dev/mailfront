@@ -61,7 +61,7 @@ export default class AutocompleteField extends Component {
             onTokenAdd={function(token) {
               console.log('token added: ', token);
             }}
-            textarea={true}
+            allowCustomValues={1}
             displayOption={function(option, index) {
               return option;
             }}
